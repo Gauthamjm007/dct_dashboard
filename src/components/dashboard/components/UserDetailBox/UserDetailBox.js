@@ -34,7 +34,7 @@ const UserDetailBox = (props) => {
     }
     setAnchorEl(null);
   };
-  const { className, title, route, id, value } = props;
+  const { className, title, route, id, email, mobile } = props;
 
   const classes = useStyles({ ...props });
 
@@ -78,7 +78,8 @@ const UserDetailBox = (props) => {
             justify="center"
             alignItems="center"
           >
-            <Typography variant="p">{value}</Typography>
+            <p style={{ fontSize: "7" }}>{email}</p>
+            <p style={{ fontSize: "7" }}>{mobile}</p>
           </Grid>
         </Grid>
       </CardContent>

@@ -11,18 +11,21 @@ const UserDetails = (props) => {
   return (
     <div className={classes.root}>
       <Grid container spacing={4}>
-        {props.student.map((data) => {
-          return (
-            <Grid item lg={3} sm={6} xl={3} xs={12} key={data.id}>
-              <UserDetailBox
-                route={`/student/${data.Mobile}`}
-                id={data.Mobile}
-                title={data.Name}
-                value={`${data.Email} ${data.Mobile}`}
-              />
-            </Grid>
-          );
-        })}
+        {props.student
+          .sort((a, b) => a.Name.localeCompare(b.Name))
+          .map((data) => {
+            return (
+              <Grid item lg={4} sm={6} xl={3} xs={12} key={data.id}>
+                <UserDetailBox
+                  route={`/student/${data.Mobile}`}
+                  id={data.Mobile}
+                  title={data.Name}
+                  email={data.Email}
+                  mobile={data.Mobile}
+                />
+              </Grid>
+            );
+          })}
       </Grid>
     </div>
   );
