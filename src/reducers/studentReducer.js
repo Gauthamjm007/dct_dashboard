@@ -5,7 +5,7 @@ export default function studentReducer(state = initState, action) {
     case "SET_STUDENT":
       return action.payload;
     case "REMOVE_STUDENT":
-      return state.filter((ele) => ele.id !== action.payload);
+      return state.filter((ele) => ele.Mobile !== action.payload);
     default:
       return [...state];
   }

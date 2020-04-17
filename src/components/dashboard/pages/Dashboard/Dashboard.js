@@ -152,7 +152,6 @@ const Dashboard = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    members: state.members,
     student: state.student,
   };
 };

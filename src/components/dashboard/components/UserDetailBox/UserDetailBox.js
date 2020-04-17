@@ -13,9 +13,8 @@ import {
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import useStyles from "./styles";
 import { Link } from "react-router-dom";
-import { removeMember } from "../../../../actions/membersAction";
 import { connect } from "react-redux";
-
+import { removeStudent } from "../../../../actions/studentAction";
 /**
  * This component is a component for user details, material ui is used
  */
@@ -28,12 +27,10 @@ const UserDetailBox = (props) => {
   };
 
   const handleClose = (id) => {
-    if (id) {
-      props.dispatch(removeMember(id));
-    }
     setAnchorEl(null);
+    props.dispatch(removeStudent(id));
   };
-  const { className, title, route, id, email, mobile, lastlogin } = props;
+  const { className, title, route, email, mobile, lastlogin } = props;
 
   const classes = useStyles({ ...props });
 
@@ -62,7 +59,7 @@ const UserDetailBox = (props) => {
                   View More
                 </Link>
               </MenuItem>
-              <MenuItem onClick={() => handleClose(id)}>Remove</MenuItem>
+              <MenuItem onClick={() => handleClose(mobile)}>Remove</MenuItem>
             </Menu>
           </>
         }
