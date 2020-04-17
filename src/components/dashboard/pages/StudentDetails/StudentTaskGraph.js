@@ -11,22 +11,19 @@ import {
 import PropTypes from "prop-types";
 
 /** This component accepts data of array of objects having keys of user and hours with string and number values respectively */
-export default function SimpleBar(props) {
+export default function StudentTaskGraph(props) {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart width={900} height={250} data={props.data}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="num" />
+        <XAxis dataKey="task" />
         <YAxis />
-        <Bar dataKey="complete" barSize={7} fill="#34d12c" />
-        <Bar dataKey="inprogress" barSize={7} fill="#faa302" />
-        <Bar dataKey="incomplete" barSize={7} fill="#f04a29" />
+        <Bar dataKey="time" barSize={7} fill="#34d12c" />
       </BarChart>
     </ResponsiveContainer>
   );
 }
 
-SimpleBar.propTypes = {
-  /**accepts array of objects as value */
+StudentTaskGraph.propTypes = {
   data: PropTypes.array,
 };

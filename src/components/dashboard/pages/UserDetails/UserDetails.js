@@ -3,7 +3,6 @@ import { Grid } from "@material-ui/core";
 import { UserDetailBox } from "../../components";
 import useStyles from "./styles";
 import { connect } from "react-redux";
-import minutesDiff from "../../../../selectors/minutesDiff";
 
 const UserDetails = (props) => {
   const classes = useStyles();
@@ -22,6 +21,7 @@ const UserDetails = (props) => {
                   title={data.Name}
                   email={data.Email}
                   mobile={data.Mobile}
+                  lastlogin={data.LastLogin}
                 />
               </Grid>
             );

@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   Grid,
-  Typography,
   CardHeader,
   IconButton,
   Menu,
@@ -34,7 +33,7 @@ const UserDetailBox = (props) => {
     }
     setAnchorEl(null);
   };
-  const { className, title, route, id, email, mobile } = props;
+  const { className, title, route, id, email, mobile, lastlogin } = props;
 
   const classes = useStyles({ ...props });
 
@@ -80,6 +79,10 @@ const UserDetailBox = (props) => {
           >
             <p style={{ fontSize: "7" }}>{email}</p>
             <p style={{ fontSize: "7" }}>{mobile}</p>
+            <p style={{ fontSize: "7" }}>
+              Last Login: {new Date(lastlogin).toDateString()} at{" "}
+              {new Date(lastlogin).toLocaleTimeString()}
+            </p>
           </Grid>
         </Grid>
       </CardContent>

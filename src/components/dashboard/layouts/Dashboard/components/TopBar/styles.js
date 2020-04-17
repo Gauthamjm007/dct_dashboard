@@ -53,6 +53,7 @@ export default makeStyles((theme) => ({
   },
   themeToggler: {
     marginLeft: "auto",
+    color: theme.palette.custom.primary,
   },
   homeButton: {
     marginLeft: theme.spacing(1),
@@ -62,6 +63,6 @@ export default makeStyles((theme) => ({
     logo: { display: "none" },
   },
   homeicon: {
-    color: theme.palette.contrastText,
+    color: theme.palette.custom.primary,
   },
 }));

@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import UserDetails from "../pages/UserDetails/UserDetails";
 import WithLayoutRoute from "./WithLayoutRoute";
 import DashboardLayout from "../layouts/Dashboard/Dashboard";
+import StudentDetail from "../pages/StudentDetails/StudentDetail";
 
 import Upload from "../pages/UploadFiles/Upload";
 
@@ -22,6 +23,13 @@ function Routes() {
         exact
         layout={DashboardLayout}
         path="/details"
+      />
+
+      <WithLayoutRoute
+        component={StudentDetail}
+        exact
+        layout={DashboardLayout}
+        path="/student/:id"
       />
 
       <WithLayoutRoute

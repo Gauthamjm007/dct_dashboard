@@ -1,4 +1,4 @@
-export const setStudent = (student) => {
+export const setStudent = (student, redirect) => {
   return { type: "SET_STUDENT", payload: student };
 };
 

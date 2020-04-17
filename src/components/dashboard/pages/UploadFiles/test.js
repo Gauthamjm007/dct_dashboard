@@ -73,9 +73,6 @@ var arr = [
   },
 ];
 
-const a = [{ a: "Completed | 49secs" }, { a: "b" }];
-
-console.log(a.map((num) => Object.values(num)).flat());
-
-
-console.log(checknum.test(a[1].a));
+const a = [{ a: "In Completed | 49secs" }, { a: "b" }];
+const check = /[a-z]+/gi;
+console.log("In Completed | 49secs".match(check)[0]);

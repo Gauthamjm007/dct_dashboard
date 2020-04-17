@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { setStudent } from "../../../../actions/studentAction";
 import useStyles from "./styles";
 import Grid from "@material-ui/core/Grid";
+import Swal from "sweetalert2";
 const csv = require("csvtojson");
 
 function Upload(props) {
@@ -37,14 +38,24 @@ function Upload(props) {
               }
             });
 
+            const redirect = () => {
+              return props.history.push("/dashboard");
+            };
             props.dispatch(
               setStudent(
                 JSON.parse(JSON.stringify(toJson).replace(/\s(?=\w+":)/g, ""))
-              )
+              ),
+              redirect
             );
             console.log(
               JSON.parse(JSON.stringify(toJson).replace(/\s(?=\w+":)/g, ""))
             );
+            Swal.fire(
+              "File Uploaded",
+              "Your CSV has been uploaded sucessfully",
+              "success"
+            );
+            redirect();
           });
       };
       reader.readAsBinaryString(file);

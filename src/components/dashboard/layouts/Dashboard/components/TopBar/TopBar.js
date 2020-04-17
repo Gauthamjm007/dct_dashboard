@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import useStyles from "./styles";
 import ThemeToggler from "../../../../components/ThemeToggler/ThemeToggler";
 import { connect } from "react-redux";
-import { getStudent } from "./../../../../../../actions/studentAction";
 
 /**
  * This component is a top bar it accpets 4 props a style ,onToggleSidebar , openSideBar, childreb

@@ -1,14 +1,16 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import { InfoBox, Widget, SimpleTable } from "../../components";
-import ExploreIcon from "@material-ui/icons/Explore";
 import useStyles from "./styles";
 import GroupIcon from "@material-ui/icons/Group";
-import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import { connect } from "react-redux";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import HourglassEmptyIcon from "@material-ui/icons/HourglassEmpty";
+import TimerIcon from "@material-ui/icons/Timer";
 import SimpleBar from "./SimpleBar";
-
+import LaptopChromebookIcon from "@material-ui/icons/LaptopChromebook";
+import TimelapseIcon from "@material-ui/icons/Timelapse";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import CancelIcon from "@material-ui/icons/Cancel";
 /**
  * This component is dashboard component it is displayed in main page, on route /dashboard
  */
@@ -80,14 +82,14 @@ const Dashboard = (props) => {
           <InfoBox
             title="Number of Assignments Given"
             value={numTasks}
-            icon={<AccessTimeIcon style={{ width: 60, height: 60 }} />}
+            icon={<LaptopChromebookIcon style={{ width: 60, height: 60 }} />}
           />
         </Grid>
         <Grid item lg={3} sm={6} xl={3} xs={12}>
           <InfoBox
             title="Average Time Spent on assignments "
-            value={avgTime + " " + "min"}
-            icon={<ExploreIcon style={{ width: 60, height: 60 }} />}
+            value={avgTime.concat(" min")}
+            icon={<TimerIcon style={{ width: 60, height: 60 }} />}
           />
         </Grid>
         <Grid item lg={3} sm={6} xl={3} xs={12}>
@@ -98,7 +100,7 @@ const Dashboard = (props) => {
               " " +
               "min"
             }
-            icon={<ExploreIcon style={{ width: 60, height: 60 }} />}
+            icon={<TimelapseIcon style={{ width: 60, height: 60 }} />}
           />
         </Grid>
 
@@ -106,7 +108,7 @@ const Dashboard = (props) => {
           <InfoBox
             title={`Number of Completed tasks out of ${totalTasks}`}
             value={String(findIncludes("Completed"))}
-            icon={<FormatListNumberedIcon style={{ width: 60, height: 60 }} />}
+            icon={<CheckCircleIcon style={{ width: 60, height: 60 }} />}
           />
         </Grid>
 
@@ -114,18 +116,18 @@ const Dashboard = (props) => {
           <InfoBox
             title={`In Progress tasks out of ${totalTasks}`}
             value={String(findIncludes("In"))}
-            icon={<FormatListNumberedIcon style={{ width: 60, height: 60 }} />}
+            icon={<HourglassEmptyIcon style={{ width: 60, height: 60 }} />}
           />
         </Grid>
         <Grid item lg={3} sm={6} xl={3} xs={12}>
           <InfoBox
-            title={`In Progress tasks out of ${totalTasks}`}
+            title={`In Complete tasks out of ${totalTasks}`}
             value={String(
               Math.abs(
                 totalTasks - findIncludes("In") - findIncludes("Completed")
               )
             )}
-            icon={<FormatListNumberedIcon style={{ width: 60, height: 60 }} />}
+            icon={<CancelIcon style={{ width: 60, height: 60 }} />}
           />
         </Grid>
 

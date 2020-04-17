@@ -9,14 +9,14 @@ const pages = [
     icon: <PublishIcon />,
   },
   {
-    title: "Members Details",
-    href: "/details",
-    icon: <PersonOutlineIcon />,
-  },
-  {
     title: "Dashboard",
     href: "/dashboard",
     icon: <DashboardIcon />,
+  },
+  {
+    title: "Members Details",
+    href: "/details",
+    icon: <PersonOutlineIcon />,
   },
 ];
 
